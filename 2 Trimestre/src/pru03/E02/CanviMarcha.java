@@ -2,6 +2,9 @@ package pru03.E02;
 
 public class CanviMarcha extends PRU0302Cotxe_Guille_Diaz implements InterfaceCotxe {
 	
+	MarxaAutomatic marxa=MarxaAutomatic.N;
+	MarxaManual marxam=MarxaManual.primera;
+	
 	public CanviMarcha(String marca, String model, TipusCanvi tipuscanvi) {
 		super(marca, model, tipuscanvi);
 		this.marca=marca;
@@ -12,30 +15,63 @@ public class CanviMarcha extends PRU0302Cotxe_Guille_Diaz implements InterfaceCo
 	public enum MarxaAutomatic {
 		F,N,R;
 	}
-	public void CanviarMarxaAutomatic() throws Exception {
-		MarxaAutomatic marxa=MarxaAutomatic.N;
+	public MarxaAutomatic CanviarMarxaAutomatic(int cambiomarxa) throws Exception {
+		
 		if (motor.equals(EstatsMotorCotxe.EnMarxa)) {
-			
+			if (marxa.equals(MarxaAutomatic.N)) {
+				if (cambiomarxa==1) {
+					marxa=MarxaAutomatic.F;
+				}
+				else if (cambiomarxa==-1) {
+					marxa=MarxaAutomatic.R;
+				}
 			}
 			
-		}
-		else (motor.equals(EstatsMotorCotxe.EnAturat()){
+			else if (marxa.equals(MarxaAutomatic.F)) {
+				if (cambiomarxa==0) {
+					marxa=MarxaAutomatic.N;
+				}
+			}
+			
+			else if (marxa.equals(MarxaAutomatic.R)) {
+				if (cambiomarxa==0) {
+					marxa=MarxaAutomatic.N;
+				}
+			}
+			}
+		
+		else {
 			throw new Exception ("No puedes cambiar de marcha si tienes el vehiculo apagado.");
 		}
+		return marxa;
 	}
 	
 	public enum MarxaManual {
 		primera,segona,tercera,quarta,cinquena,sisena, R;
 	}
 	
-	public void CanviarMarxaManual() {
-		if (motor.equals(EstatsMotorCotxe.EnMarxa()) {
-			
-		}
-		else (motor.equals(EstatsMotorCotxe.EnAturat()){
-			throw new Exception ("No puedes cambiar de marcha si tienes el vehiculo apagado.");
-		}
+	public MarxaManual CanviarMarxaManual(int cambiomarxa) throws Exception {
 		
+	
+		if (motor.equals(EstatsMotorCotxe.EnMarxa)) {
+			if (marxam.equals(MarxaManual.primera)) {
+				if (cambiomarxa==2) {
+					marxam=MarxaManual.segona;
+				}
+				else if (cambiomarxa==-1) {
+					marxam=MarxaManual.R;
+					}
+				}
+			else if (marxam.equals(MarxaManual.segona)) {
+				if (cambiomarxa==3) {
+					marxam=MarxaManual.tercera;
+				}
+				else if (cambiomarxa==1) {
+					marxam=MarxaManual.primera;
+				}
+			}
+			else if 
+		}
 	}
 	
 	public String Canvi(String tipus) {

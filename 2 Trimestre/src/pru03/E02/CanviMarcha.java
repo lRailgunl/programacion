@@ -57,7 +57,7 @@ public class CanviMarcha extends PRU0302Cotxe_Guille_Diaz implements InterfaceCo
 			if (marxam.equals(MarxaManual.primera)) {
 				if (cambiomarxa==2) {
 					marxam=MarxaManual.segona;
-				}
+					}
 				else if (cambiomarxa==-1) {
 					marxam=MarxaManual.R;
 					}
@@ -65,12 +65,45 @@ public class CanviMarcha extends PRU0302Cotxe_Guille_Diaz implements InterfaceCo
 			else if (marxam.equals(MarxaManual.segona)) {
 				if (cambiomarxa==3) {
 					marxam=MarxaManual.tercera;
-				}
+					}
 				else if (cambiomarxa==1) {
 					marxam=MarxaManual.primera;
+					}
 				}
+			else if (marxam.equals(MarxaManual.tercera)) {
+				if (cambiomarxa==4) {
+					marxam=MarxaManual.quarta;
+					}
+				else if (cambiomarxa==2) {
+					marxam=MarxaManual.segona;
+					}
+				}
+			else if (marxam.equals(MarxaManual.quarta)) {
+				if (cambiomarxa==5) {
+					marxam=MarxaManual.cinquena;
+					}
+				else if (cambiomarxa==3) {
+					marxam=MarxaManual.tercera;
+					}
+				}
+			else if (marxam.equals(MarxaManual.cinquena)) {
+				if (cambiomarxa==6) {
+					marxam=MarxaManual.sisena;
+					}
+				else if (cambiomarxa==4) {
+					marxam=MarxaManual.quarta;
+					}
+				}
+			else if (marxam.equals(MarxaManual.R)) {
+				if (cambiomarxa==1) {
+					marxam=MarxaManual.primera;
+					}
+				}
+			else {
+				throw new Exception ("No puedes cambiar de marcha si tienes el vehiculo apagado.");
 			}
-			else if 
+			return marxam;
+		
 		}
 	}
 	

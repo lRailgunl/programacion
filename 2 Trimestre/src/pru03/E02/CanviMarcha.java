@@ -50,71 +50,59 @@ public class CanviMarcha extends PRU0302Cotxe_Guille_Diaz implements InterfaceCo
 		primera,segona,tercera,quarta,cinquena,sisena, R;
 	}
 	
-	public MarxaManual CanviarMarxaManual(int cambiomarxa) throws Exception {
+	public MarxaManual CanviarMarxaManual(int cambiomarxam) throws Exception {
 		
 	
 		if (motor.equals(EstatsMotorCotxe.EnMarxa)) {
 			if (marxam.equals(MarxaManual.primera)) {
-				if (cambiomarxa==2) {
+				if (cambiomarxam==2) {
 					marxam=MarxaManual.segona;
 					}
-				else if (cambiomarxa==-1) {
+				else if (cambiomarxam==-1) {
 					marxam=MarxaManual.R;
 					}
 				}
 			else if (marxam.equals(MarxaManual.segona)) {
-				if (cambiomarxa==3) {
+				if (cambiomarxam==3) {
 					marxam=MarxaManual.tercera;
 					}
-				else if (cambiomarxa==1) {
+				else if (cambiomarxam==1) {
 					marxam=MarxaManual.primera;
 					}
 				}
 			else if (marxam.equals(MarxaManual.tercera)) {
-				if (cambiomarxa==4) {
+				if (cambiomarxam==4) {
 					marxam=MarxaManual.quarta;
 					}
-				else if (cambiomarxa==2) {
+				else if (cambiomarxam==2) {
 					marxam=MarxaManual.segona;
 					}
 				}
 			else if (marxam.equals(MarxaManual.quarta)) {
-				if (cambiomarxa==5) {
+				if (cambiomarxam==5) {
 					marxam=MarxaManual.cinquena;
 					}
-				else if (cambiomarxa==3) {
+				else if (cambiomarxam==3) {
 					marxam=MarxaManual.tercera;
 					}
 				}
 			else if (marxam.equals(MarxaManual.cinquena)) {
-				if (cambiomarxa==6) {
+				if (cambiomarxam==6) {
 					marxam=MarxaManual.sisena;
 					}
-				else if (cambiomarxa==4) {
+				else if (cambiomarxam==4) {
 					marxam=MarxaManual.quarta;
 					}
 				}
 			else if (marxam.equals(MarxaManual.R)) {
-				if (cambiomarxa==1) {
+				if (cambiomarxam==1) {
 					marxam=MarxaManual.primera;
 					}
 				}
+			}
 			else {
 				throw new Exception ("No puedes cambiar de marcha si tienes el vehiculo apagado.");
 			}
 			return marxam;
-		
-		}
 	}
-	
-	public String Canvi(String tipus) {
-		if (tipus.equals(tipuscanvi.CanviManual()) {
-			this.CanviarMarxaAutomatic();
-		}
-		else {
-			this.CanviarMarxaManual();
-		}
-		return tipus;
-		}
-
 }
